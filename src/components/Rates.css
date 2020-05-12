@@ -1,0 +1,27 @@
+body {
+  background-color: black;
+  margin: auto;
+}
+h1 {
+  color: white;
+  padding-top: 15px;
+}
+.container {
+  width: 30%;
+  text-align: center;
+  border-color: white;
+  border-style: ridge;
+  border-radius: 10%;
+}
+
+#first {
+  margin: 10px 10px;
+}
+
+#a {
+  width: 100%;
+  margin: 10% 0;
+}
+select {
+  margin: 10% 0;
+}

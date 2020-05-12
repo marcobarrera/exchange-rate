@@ -3,7 +3,11 @@ import Rate from "./Rates";
 
 class App extends React.Component {
   render() {
-    return <Rate />;
+    return (
+      <div>
+        <Rate />
+      </div>
+    );
   }
 }
 

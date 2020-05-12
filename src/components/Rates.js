@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-
+import "./Rates.css";
 class Rate extends React.Component {
   state = {
     exrates: [],
@@ -23,92 +23,111 @@ class Rate extends React.Component {
 
   render() {
     return (
-      <div>
-        <input id="fromAmount" type="text" onKeyUp={this.componentDidMount} />
+      <div className="ui container">
+        <h1>Currency Converter</h1>
+        <div id="first">
+          <div id="a" className="ui right labeled input">
+            <label htmlFor="amount" className="ui label">
+              $
+            </label>
+            <input
+              id="fromAmount"
+              type="text"
+              onKeyUp={this.componentDidMount}
+            />
+            <div className="ui basic label">.00</div>
+          </div>
 
-        <select
-          id="from"
-          className="ui dropdown"
-          onChange={this.componentDidMount}
-        >
-          <option value="CAD">CAD</option>
-          <option value="HKD">HKD</option>
-          <option value="ISK">ISK</option>
-          <option value="PHP">PHP</option>
-          <option value="DKK">DKK</option>
-          <option value="HUF">HUF</option>
-          <option value="CZK">CZK</option>
-          <option value="AUD">AUD</option>
-          <option value="RON">RON</option>
-          <option value="SEK">SEK</option>
-          <option value="IDR">IDR</option>
-          <option value="INR">INR</option>
-          <option value="BRL">BRL</option>
-          <option value="RUB">RUB</option>
-          <option value="HRK">HRK</option>
-          <option value="JPY">JPY</option>
-          <option value="THB">THB</option>
-          <option value="CHF">CHF</option>
-          <option value="SGD">SGD</option>
-          <option value="PLN">PLN</option>
-          <option value="BGN">BGN</option>
-          <option value="TRY">TRY</option>
-          <option value="CNY">CNY</option>
-          <option value="NOK">NOK</option>
-          <option value="NZD">NZD</option>
-          <option value="ZAR">ZAR</option>
-          <option value="USD" selected>
-            USD
-          </option>
-          <option value="MXN">MXN</option>
-          <option value="ILS">ILS</option>
-          <option value="GBP">GBP</option>
-          <option value="KRW">KRW</option>
-          <option value="MYR">MYR</option>
-        </select>
+          <select
+            id="from"
+            className="ui fluid search selection dropdown"
+            onChange={this.componentDidMount}
+          >
+            <option value="">Select Currency</option>
+            <option value="USD">USD / US Dollar</option>
+            <option value="CAD">CAD / Canadian Dollar</option>
+            <option value="HKD">HKD / Hong Kong Dollar</option>
+            <option value="ISK">ISK / Icelandic Krona</option>
+            <option value="PHP">PHP / Philippine Peso</option>
+            <option value="DKK">DKK / Danish Krone</option>
+            <option value="HUF">HUF / Hungarian Forint</option>
+            <option value="CZK">CZK / Czech Koruna</option>
+            <option value="AUD">AUD / Australian Dollar</option>
+            <option value="RON">RON / Romanian Leu</option>
+            <option value="SEK">SEK / Swedish Krona</option>
+            <option value="IDR">IDR / Indonesian Rupiah</option>
+            <option value="INR">INR / Indian Rupee</option>
+            <option value="BRL">BRL / Brazilian Real</option>
+            <option value="RUB">RUB / Russian Ruble</option>
+            <option value="HRK">HRK / Croatian Kuna</option>
+            <option value="JPY">JPY / Japanese Yen</option>
+            <option value="THB">THB / Indonesian </option>
+            <option value="CHF">CHF / Swiss Franc</option>
+            <option value="SGD">SGD / Singapore Dollar</option>
+            <option value="PLN">PLN / Poland Zloty</option>
+            <option value="BGN">BGN / Bulgarian Lev</option>
+            <option value="TRY">TRY / Turkish Lira</option>
+            <option value="CNY">CNY / Chinese Yuan</option>
+            <option value="NOK">NOK / Norwegian Krone</option>
+            <option value="NZD">NZD / New Zealand Dollar</option>
+            <option value="ZAR">ZAR / South African Rand</option>
+            <option value="MXN">MXN / Mexican Peso</option>
+            <option value="ILS">ILS / Israeli New Shekel</option>
+            <option value="GBP">GBP / British Pound</option>
+            <option value="KRW">KRW / South Korean Won</option>
+            <option value="MYR">MYR / Malaysian Ringgit</option>
+          </select>
+        </div>
 
-        <input id="toAmount" type="text" />
+        <div id="first">
+          <div id="a" className="ui right labeled input">
+            <label htmlFor="amount" className="ui label">
+              $
+            </label>
+            <input id="toAmount" type="text" />
+            <div className="ui basic label">.00</div>
+          </div>
 
-        <select
-          id="to"
-          className="ui dropdown"
-          onChange={this.componentDidMount}
-        >
-          <option value="CAD" selected>
-            CAD
-          </option>
-          <option value="HKD">HKD</option>
-          <option value="ISK">ISK</option>
-          <option value="PHP">PHP</option>
-          <option value="DKK">DKK</option>
-          <option value="HUF">HUF</option>
-          <option value="CZK">CZK</option>
-          <option value="AUD">AUD</option>
-          <option value="RON">RON</option>
-          <option value="SEK">SEK</option>
-          <option value="IDR">IDR</option>
-          <option value="INR">INR</option>
-          <option value="BRL">BRL</option>
-          <option value="RUB">RUB</option>
-          <option value="HRK">HRK</option>
-          <option value="JPY">JPY</option>
-          <option value="THB">THB</option>
-          <option value="CHF">CHF</option>
-          <option value="SGD">SGD</option>
-          <option value="PLN">PLN</option>
-          <option value="BGN">BGN</option>
-          <option value="TRY">TRY</option>
-          <option value="CNY">CNY</option>
-          <option value="NOK">NOK</option>
-          <option value="NZD">NZD</option>
-          <option value="ZAR">ZAR</option>
-          <option value="USD">USD</option>
-          <option value="MXN">MXN</option>
-          <option value="ILS">ILS</option>
-          <option value="GBP">GBP</option>
-          <option value="KRW">KRW</option>
-          <option value="MYR">MYR</option>
-        </select>
+          <select
+            id="to"
+            className="ui fluid search selection dropdown"
+            onChange={this.componentDidMount}
+          >
+            <option value="">Select Currency</option>
+            <option value="CAD">CAD / Canadian Dollar</option>
+            <option value="HKD">HKD / Hong Kong Dollar</option>
+            <option value="ISK">ISK / Icelandic Krona</option>
+            <option value="PHP">PHP / Philippine Peso</option>
+            <option value="DKK">DKK / Danish Krone</option>
+            <option value="HUF">HUF / Hungarian Forint</option>
+            <option value="CZK">CZK / Czech Koruna</option>
+            <option value="AUD">AUD / Australian Dollar</option>
+            <option value="RON">RON / Romanian Leu</option>
+            <option value="SEK">SEK / Swedish Krona</option>
+            <option value="IDR">IDR / Indonesian Rupiah</option>
+            <option value="INR">INR / Indian Rupee</option>
+            <option value="BRL">BRL / Brazilian Real</option>
+            <option value="RUB">RUB / Russian Ruble</option>
+            <option value="HRK">HRK / Croatian Kuna</option>
+            <option value="JPY">JPY / Japanese Yen</option>
+            <option value="THB">THB / Indonesian </option>
+            <option value="CHF">CHF / Swiss Franc</option>
+            <option value="SGD">SGD / Singapore Dollar</option>
+            <option value="PLN">PLN / Poland Zloty</option>
+            <option value="BGN">BGN / Bulgarian Lev</option>
+            <option value="TRY">TRY / Turkish Lira</option>
+            <option value="CNY">CNY / Chinese Yuan</option>
+            <option value="NOK">NOK / Norwegian Krone</option>
+            <option value="NZD">NZD / New Zealand Dollar</option>
+            <option value="ZAR">ZAR / South African Rand</option>
+            <option value="USD">USD / US Dollar</option>
+            <option value="MXN">MXN / Mexican Peso</option>
+            <option value="ILS">ILS / Israeli New Shekel</option>
+            <option value="GBP">GBP / British Pound</option>
+            <option value="KRW">KRW / South Korean Won</option>
+            <option value="MYR">MYR / Malaysian Ringgit</option>
+          </select>
+        </div>
       </div>
     );
   }
