@@ -6,21 +6,20 @@ h1 {
   color: white;
   padding-top: 15px;
 }
-.container {
-  width: 30%;
+#container {
+  width: 50%;
   text-align: center;
-  border-color: white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
   border-style: ridge;
-  border-radius: 10%;
-}
-
-#first {
-  margin: 10px 10px;
+  overflow: hidden;
 }
 
 #a {
-  width: 100%;
-  margin: 10% 0;
+  margin: 10% 10px;
 }
 select {
   margin: 10% 0;
