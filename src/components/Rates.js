@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import "./Rates.css";
+
 class Rate extends React.Component {
   state = {
     exrates: [],
@@ -26,8 +27,8 @@ class Rate extends React.Component {
       <div>
         <div id="container" className="ui container">
           <h1>Currency Converter</h1>
-          <div id="first">
-            <div id="a" className="ui right labeled input large">
+          <div id="converter">
+            <div id="inputBox" className="ui right labeled input large">
               <label htmlFor="amount" className="ui label">
                 $
               </label>
@@ -80,8 +81,8 @@ class Rate extends React.Component {
             </select>
           </div>
 
-          <div id="first">
-            <div id="a" className="ui right labeled input large">
+          <div id="converter">
+            <div id="inputBox" className="ui right labeled input large">
               <label htmlFor="amount" className="ui label">
                 $
               </label>
