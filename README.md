@@ -1,7 +1,8 @@
 # Exchange Rate Conversion
 
 ## Demo
-![demo](demo.gif)
+<!-- ![demo](demo.gif) -->
+<img src="demo.gif" alt="demo" width="200"/>
 
 ## Description
 
