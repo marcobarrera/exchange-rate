@@ -1,5 +1,8 @@
 # Exchange Rate Conversion
 
+## Demo
+![Demo](demo.gif)
+
 ## Description
 
 Web app that allows the user to get the exchange rate from various foreign currencies.
