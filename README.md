@@ -1,7 +1,7 @@
 # Exchange Rate Conversion
 
 ## Demo
-![Demo](demo.gif)
+![demo](demo.gif)
 
 ## Description
 
